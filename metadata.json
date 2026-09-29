@@ -1,0 +1,8 @@
+{
+  "name": "NEW SHREE SWAMI SAMARTH TRANSPORT",
+  "description": "Reliable, safe and timely logistics and transport services from Chakan, Pune across Maharashtra. Part load, full load booking and area-wise transport enquiry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
