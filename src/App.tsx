@@ -17,6 +17,8 @@ import { FAQSection } from './components/FAQSection.tsx';
 import { ContactSection } from './components/ContactSection.tsx';
 import { Footer } from './components/Footer.tsx';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp.tsx';
+import { PWAInstallButton } from './components/PWAInstallButton.tsx';
+import { DownloadHTMLButton } from './components/DownloadHTMLButton.tsx';
 
 export default function App() {
   const [language, setLanguage] = useState<Language>(() => {
@@ -26,7 +28,7 @@ export default function App() {
     } catch {
       // fallback
     }
-    return 'en';
+    return 'mr'; // Marathi default
   });
 
   const [selectedCity, setSelectedCity] = useState<string>('');
@@ -84,10 +86,19 @@ export default function App() {
 
         {/* Contact Section & Google Maps */}
         <ContactSection language={language} />
+
+        {/* 1-Click HTML File Download Banner */}
+        <DownloadHTMLButton language={language} variant="banner" />
+
+        {/* 1-Click App Install & Home Screen Banner */}
+        <PWAInstallButton language={language} variant="banner" />
       </main>
 
       {/* Footer */}
       <Footer language={language} />
+
+      {/* Floating 1-Click App Shortcut Button */}
+      <PWAInstallButton language={language} variant="floating" />
 
       {/* Floating WhatsApp Action Button */}
       <FloatingWhatsApp language={language} />

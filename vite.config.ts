@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/NEW-SHREE-SWAMI-SAMARTH-TRANSPORT/',
+    base: process.env.GITHUB_PAGES ? '/NEW-SHREE-SWAMI-SAMARTH-TRANSPORT/' : './',
 
     plugins: [react(), tailwindcss()],
 

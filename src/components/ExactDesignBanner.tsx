@@ -5,6 +5,8 @@ import { CONTACT_INFO } from '../data/transportData.ts';
 import { ChakanLogo } from './ChakanLogo.tsx';
 import { BestBadge } from './BestBadge.tsx';
 import { QuickNavigationMenu } from './QuickNavigationMenu.tsx';
+import { PWAInstallButton } from './PWAInstallButton.tsx';
+import { DownloadHTMLButton } from './DownloadHTMLButton.tsx';
 import heroTruckAsset from '../assets/images/tata_highway_truck_1790620366029.jpg';
 
 interface ExactDesignBannerProps {
@@ -171,6 +173,12 @@ export const ExactDesignBanner: React.FC<ExactDesignBannerProps> = ({
                 <MessageCircle className="w-6 h-6 fill-white shrink-0" />
                 <span>{isMr ? 'व्हॉट्सअ‍ॅप चौकशी (WhatsApp Enquiry)' : 'WhatsApp Enquiry'}</span>
               </a>
+
+              {/* 1-Click App Shortcut & HTML Download Action Group */}
+              <div className="pt-1 flex flex-wrap items-center gap-2.5">
+                <PWAInstallButton language={language} variant="hero" />
+                <DownloadHTMLButton language={language} variant="hero" />
+              </div>
             </div>
 
             {/* Quick Badges below buttons */}

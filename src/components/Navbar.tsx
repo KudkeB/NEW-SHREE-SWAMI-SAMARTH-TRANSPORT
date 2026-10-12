@@ -4,13 +4,18 @@ import { Language } from '../types/index.ts';
 import { CONTACT_INFO } from '../data/transportData.ts';
 import { QuickNavigationMenu } from './QuickNavigationMenu.tsx';
 import { ChakanLogo } from './ChakanLogo.tsx';
+import { PWAInstallButton } from './PWAInstallButton.tsx';
+import { DownloadHTMLButton } from './DownloadHTMLButton.tsx';
 
 interface NavbarProps {
   language: Language;
   onToggleLanguage: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage }) => {
+export const Navbar: React.FC<NavbarProps> = ({ 
+  language, 
+  onToggleLanguage 
+}) => {
   const isMr = language === 'mr';
 
   return (
@@ -27,7 +32,13 @@ export const Navbar: React.FC<NavbarProps> = ({ language, onToggleLanguage }) =>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-semibold">
+          <div className="flex items-center gap-2.5 sm:gap-4 text-xs font-semibold">
+            {/* 1-Click HTML File Download */}
+            <DownloadHTMLButton language={language} variant="navbar" />
+
+            {/* 1-Click Install App Shortcut */}
+            <PWAInstallButton language={language} variant="navbar" />
+
             <a 
               href={`tel:+91${CONTACT_INFO.primaryPhone}`} 
               className="hover:text-amber-300 transition-colors flex items-center gap-1"
